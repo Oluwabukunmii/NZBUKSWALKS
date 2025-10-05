@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NZBUKSWALKS.API.Data;
 
@@ -11,9 +12,11 @@ using NZBUKSWALKS.API.Data;
 namespace NZBUKSWALKS.API.Migrations
 {
     [DbContext(typeof(NZBUKSWALKSDBCONTEXT))]
-    partial class NZBUKSWALKSDBCONTEXTModelSnapshot : ModelSnapshot
+    [Migration("20251002183330_Adding Image Table")]
+    partial class AddingImageTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,11 +63,7 @@ namespace NZBUKSWALKS.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("fileDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("fileExtension")
-                        .IsRequired()
+                    b.Property<string>("fileDesription")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("fileName")

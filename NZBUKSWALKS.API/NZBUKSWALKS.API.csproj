@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Models\Domain\NewFolder\" />
+    <Folder Include="Imagesfolder\" />
   </ItemGroup>
 
 </Project>
